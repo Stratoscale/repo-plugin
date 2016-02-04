@@ -37,14 +37,14 @@ public class TestRepoScm extends TestCase {
 
 
 	public void testSetIgnoredProjects() {
-		RepoScm scm = new RepoScm("http://manifesturl");
+		RepoScm scm = new RepoScm("http://manifesturl", null);
 		scm.setIgnoreProjects("");
 		assertEquals("", scm.getIgnoreProjects());
 		
 	}
 
 	public void testSetIgnoredProjectsKeepsOrder() {
-		RepoScm scm = new RepoScm("http://manifesturl");
+		RepoScm scm = new RepoScm("http://manifesturl", null);
 		scm.setIgnoreProjects("projecta projectb");
 		assertEquals("projecta\nprojectb", scm.getIgnoreProjects());
 		scm.setIgnoreProjects("projectb projecta");
